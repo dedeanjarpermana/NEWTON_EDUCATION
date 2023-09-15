@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend newton sept 2023",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "dede anjar permana for newton",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express-log-psql": "^1.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "passport": "^0.6.0"
+  }
+}
