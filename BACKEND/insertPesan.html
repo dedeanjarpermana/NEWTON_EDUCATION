@@ -1,0 +1,55 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Form</title>
+    
+</head>
+<body>
+    <h2>Insert Data</h2>
+    <form id="insertForm">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br>
+
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat" required><br>
+
+        <label for="pesan">Pesan:</label>
+        <input type="text" id="pesan" name="pesan" required><br>
+
+        <label for="no_kontak">Nomor Kontak:</label>
+        <input type="text" id="no_kontak" name="no_kontak" required><br>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <a href="/"> Home</a>
+    <script>
+        function submitForm() {
+            const form = document.getElementById('insertForm');
+            const formData = new FormData(form);
+    
+            fetch('http://localhost:7000/insertPesanKontak', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Object.fromEntries(formData)),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+                // Optionally, reset the form after successful submission
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

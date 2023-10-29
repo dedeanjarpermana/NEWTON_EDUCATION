@@ -10,11 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express-log-psql": "^1.0.0",
     "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
     "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.0.1",
     "passport": "^0.6.0"
   }
 }
