@@ -60,6 +60,23 @@ app.post('/insertPesanKontak', (req, res) => {
     });
 });
 
+
+// / Endpoint untuk menghapus pesan kontak berdasarkan ID
+app.delete('/deleteKontak/:id', (req, res) => {
+    const kontakId = req.params.id;
+
+    const sql = `DELETE FROM kontak_pesan WHERE id =  ?`;
+
+    pool.query(sql, [kontakId], (error, results, fields) => {
+        if (error) {
+            console.error(error.message);
+            res.status(500).send('Internal Server Error');
+        } else {
+            res.json({ message: 'Data deleted successfully' });
+        }
+    });
+});
+
 app.listen(port, () => {
   
     console.log(`Example app listening on port http://localhost:${port}/`)
